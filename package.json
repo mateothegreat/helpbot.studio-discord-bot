@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "tsc",
+        "build": "npx tsc",
         "start": "node dist/main.js"
     },
     "keywords": [],
@@ -24,5 +24,8 @@
         "@nestjs/platform-express": "^6.2.4",
         "@types/node": "^12.0.2",
         "rxjs": "^6.5.2"
+    },
+    "devDependencies": {
+        "typescript": "^3.4.5"
     }
 }
