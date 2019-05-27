@@ -22,6 +22,7 @@ build:
     - master
 
   script:
+    - echo PORT=$PORT >> .env
     - echo MYSQL_HOST=$MYSQL_HOST >> .env
     - echo MYSQL_USER=$MYSQL_USER >> .env
     - echo MYSQL_PASSWORD=$MYSQL_PASSWORD >> .env
