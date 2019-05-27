@@ -1,3 +1,3 @@
 const autobot = require('@autobot/common');
 
-autobot.BOT.start();
+autobot.BOT.start(__dirname + '/..');
