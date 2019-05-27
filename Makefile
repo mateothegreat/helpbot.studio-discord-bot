@@ -8,7 +8,7 @@
 include .make/Makefile.inc
 
 VERSION 	?= $(shell git rev-parse HEAD)
-IMAGE   	?= registry.gitlab.com/matthewdavis.io/autobots/discord-bot-typescript-autobot:$(VERSION)
+IMAGE   	?= registry.gitlab.com/helpbot/helpbot-studio-discord-bot:$(VERSION)
 
 APP			?= discord-bot-helpbot
 NS			?= default
