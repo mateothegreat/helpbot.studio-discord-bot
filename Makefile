@@ -10,10 +10,8 @@ include .make/Makefile.inc
 VERSION 	?= $(shell git rev-parse HEAD)
 IMAGE   	?= registry.gitlab.com/matthewdavis.io/autobots/discord-bot-typescript-autobot:$(VERSION)
 
-APP			?= discord-bot-typescript-autobot
+APP			?= discord-bot-helpbot
 NS			?= default
-TOKEN		?= NTQ4Nzg1NTA4NTkxODYxNzYw.D1NgXA.sBRq_2dQ6EgGo6CMphJKqb_u0ew
-OWNER_ID 	?=
 PORT		?= 8080
 
 .PHONY: build
