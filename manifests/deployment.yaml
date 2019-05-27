@@ -18,5 +18,18 @@ spec:                               # The official specification matching object
           image: $IMAGE                # Docker image used for this container
           ports:
             - containerPort: $PORT
-
+          readinessProbe:
+            httpGet:
+              path: /monitoring/is_alive
+              port: $PORT
+            initialDelaySeconds: 10
+            timeoutSeconds:      5
+            periodSeconds:       1
+          livenessProbe:
+            httpGet:
+              path: /monitoring/is_alive
+              port: $PORT
+            initialDelaySeconds: 10
+            timeoutSeconds:      5
+            periodSeconds:       5
 
