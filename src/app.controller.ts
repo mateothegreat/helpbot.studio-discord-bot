@@ -13,7 +13,7 @@ export class AppController {
     @Get()
     public getHello(): string {
 
-        this.channelsService.sendMessage(34453545);
+        // this.channelsService.sendMessage(34453545);
 
         return this.appService.getHello();
 

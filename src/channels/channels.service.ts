@@ -1,15 +1,29 @@
 import { BOT }        from '@autobot/common';
 import { Injectable } from '@nestjs/common';
-import { Message }    from 'discord.js';
+import { RichEmbed }  from 'discord.js';
+import { Message }    from './message';
 
 @Injectable()
 export class ChannelsService {
 
-    public sendMessage(message: any): Promise<Message> {
+    public sendMessage(message: Message): Promise<Message> {
 
-        console.log(123123);
+        const embed: RichEmbed = new RichEmbed().setTitle(message.title)
+                                                .setDescription(message.description);
 
-        return BOT.client.guilds.find(guild => guild.id == 581968863663751178).channels.find(channel => channel.id == 581971117565018162).send(message);
+        if (message.fields) {
+
+            message.fields.forEach(field => {
+
+                embed.addField(field.key, field.value);
+
+            });
+
+        }
+
+        return BOT.client.guilds.find(guild => guild.id == message.guild)
+                  .channels.find(channel => channel.id == message.channel)
+                  .send(embed);
 
     }
 
